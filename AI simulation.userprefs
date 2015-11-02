@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Cat.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Movement.cs" Line="23" Column="32" />
+      <File FileName="Assets\Scripts\Cat.cs" Line="30" Column="30" />
+      <File FileName="Assets\Scripts\Butterfly.cs" Line="29" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
