@@ -17,7 +17,7 @@ public class Cat : MonoBehaviour {
 	float catch_range = 6f;
 	float chase_speed = 800f;
 	float pounce_chance = 0.01f;
-	float pounce_speed = 3000f;
+	float pounce_speed = 2000f;
 	float pounce_duration = 0f;
 	float max_pounce_duration = 0.2f;
 
