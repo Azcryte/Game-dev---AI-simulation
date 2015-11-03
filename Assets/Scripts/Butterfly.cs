@@ -8,9 +8,9 @@ public class Butterfly : MonoBehaviour {
 
 	float butterfly_movespeed = 13f;
 	float frontal_detection_range = 15f;
-	float frontal_detection_cone = 90f;
+	float frontal_detection_cone = 45f;
 	float circular_detection_range = 10f;
-	float panic_speed = 1400f;
+	float panic_speed = 1100f;
 	float check_cornered_distance = 10f;
 
 	void Start () {

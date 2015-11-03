@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour {
 
 	Rigidbody rbody;
 	float ray_length = 4.0f;
-	float side_ray_adjust = 1.0f;
+	float side_ray_adjust = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour {
 		if (Physics.Raycast(moveRay_forward, ray_length)) {
 			float rand = Random.value;
 			//turn around
-			if (rand < 0.15f) {
+			if (rand < 0.1f) {
 				transform.Rotate (new Vector3(0f, 180f, 0f));
 			}
 			//turn logic
@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour {
 					transform.Rotate(new Vector3(0f, 90f, 0f));
 				}	
 				else {
-					if (rand < 0.575f) {
+					if (rand < 0.55f) {
 						transform.Rotate(new Vector3(0f, 90f, 0f)); 
 					}
 					else {

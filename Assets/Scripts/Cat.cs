@@ -16,7 +16,7 @@ public class Cat : MonoBehaviour {
 	float frontal_detection_range = 30f;
 	float catch_range = 6f;
 	float chase_speed = 800f;
-	float pounce_chance = 0.01f;
+	float pounce_chance = 0.02f;
 	float pounce_speed = 2000f;
 	float pounce_duration = 0f;
 	float max_pounce_duration = 0.2f;
@@ -43,7 +43,7 @@ public class Cat : MonoBehaviour {
 					if (catRayHitInfo.collider.tag == "Butterfly") {
 						if (!pouncing && Random.value < pounce_chance) {
 							pouncing = true;
-							Debug.Log ("pounced");
+							//Debug.Log ("pounced");
 						}
 						if (catRayHitInfo.distance <= catch_range) {
 							win.Play();
@@ -65,7 +65,7 @@ public class Cat : MonoBehaviour {
 				pounce_duration += Time.deltaTime;
 				if (pounce_duration >= max_pounce_duration) {
 					pouncing = false;
-					Debug.Log ("done");
+					//Debug.Log ("done");
 				}
 			}
 			//increment pounce duration
