@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour {
 	public GameObject catPrefab;
 	public GameObject butterflyPrefab;
 
-	float max_ray_dist = 3000f;
+	float max_ray_dist = 300f;
+
+	void Start() {
+
+	}
 
 	void Update() {
 

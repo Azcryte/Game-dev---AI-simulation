@@ -24,12 +24,16 @@ public class Butterfly : MonoBehaviour {
 			Ray butterflyRay = new Ray(transform.position, directionToCat);
 			RaycastHit butterflyRayHitInfo = new RaycastHit();
 			if (Physics.Raycast(butterflyRay, out butterflyRayHitInfo, 100f)) {
+				//Debug.DrawRay (butterflyRay.origin, directionToCat * butterflyRayHitInfo.distance, Color.red); 
+				//Debug.Log ("see");
 				if (butterflyRayHitInfo.collider.tag == "Cat") {
+					//Debug.Log ("see");
 					Ray ray_corner_check = new Ray(transform.position, -transform.forward);
 					// if cat is in front && within front detection range
 					//     if not cornered
 					//          turn around
 					if ( Vector3.Angle(transform.forward, directionToCat) < frontal_detection_cone && butterflyRayHitInfo.distance < frontal_detection_range ) {
+						//Debug.Log ("see");
 						if (!Physics.Raycast(ray_corner_check, check_cornered_distance)) {
 							transform.Rotate(0f, 180f, 0f);
 						}
@@ -37,6 +41,7 @@ public class Butterfly : MonoBehaviour {
 					// if cat is within circular detection range
 					//     panic
 					if ( butterflyRayHitInfo.distance < circular_detection_range) {
+						//Debug.Log("panic");
 						GetComponent<Rigidbody>().AddForce(-directionToCat.normalized * panic_speed);
 					}
 				}

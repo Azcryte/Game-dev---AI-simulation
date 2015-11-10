@@ -6,8 +6,8 @@ public class Movement : MonoBehaviour {
 	public float movespeed;
 
 	Rigidbody rbody;
-	float ray_length = 3.0f;
-	float side_ray_adjust = 2.0f;
+	float ray_length = 2.5f;
+	float side_ray_adjust = 1.0f;
 
 	// Use this for initialization
 	void Start () {

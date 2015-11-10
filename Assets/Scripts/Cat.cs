@@ -13,10 +13,10 @@ public class Cat : MonoBehaviour {
 	float cat_movespeed = 10.0f;
 	float frontal_detection_cone = 45f;
 	float frontal_detection_range = 30f;
-	float catch_range = 6f;
-	float chase_speed = 800f;
+	float catch_range = 4f;
+	float chase_speed = 500f;
 	float pounce_chance = 0.02f;
-	float pounce_speed = 2000f;
+	float pounce_speed = 1500f;
 	float pounce_duration = 0f;
 	float max_pounce_duration = 0.2f;
 
@@ -35,6 +35,7 @@ public class Cat : MonoBehaviour {
 			if ( angle < frontal_detection_cone) {
 				Ray catRay = new Ray(transform.position, directionToButterfly);
 				RaycastHit catRayHitInfo = new RaycastHit();
+				Debug.DrawRay (catRay.origin, directionToButterfly * catRayHitInfo.distance, Color.red); 
 				if (Physics.Raycast(catRay, out catRayHitInfo, 100f)) {
 					// cat sees butterfly
 					if (catRayHitInfo.collider.tag == "Butterfly") {
@@ -66,5 +67,9 @@ public class Cat : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void OnDestroy() {
+		GameManager.butterflyList.Remove(this.gameObject);
 	}
 }
