@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Cat : MonoBehaviour {
-
-	public Transform butterfly;
+	
 	Movement moveScript;
 
 	public AudioSource meow;
@@ -29,11 +28,9 @@ public class Cat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//moveScript.movespeed = pouncing ? cat_movespeed * 2 : cat_movespeed;
-		//Debug.Log (moveScript.movespeed);
-		if (butterfly != null) {
+		foreach (GameObject butterfly in GameManager.butterflyList) {
 			moveScript.movespeed = pouncing ? cat_movespeed * 3 : cat_movespeed;
-			Vector3 directionToButterfly = butterfly.position - transform.position;
+			Vector3 directionToButterfly = butterfly.transform.position - transform.position;
 			float angle = Vector3.Angle(transform.forward, directionToButterfly);
 			if ( angle < frontal_detection_cone) {
 				Ray catRay = new Ray(transform.position, directionToButterfly);
@@ -68,11 +65,6 @@ public class Cat : MonoBehaviour {
 					//Debug.Log ("done");
 				}
 			}
-			//increment pounce duration
 		}
-		else {
-			moveScript.movespeed = 0f;
-		}
-
 	}
 }
