@@ -12,7 +12,14 @@ public class GameManager : MonoBehaviour {
 	float max_ray_dist = 300f;
 
 	void Start() {
-
+		foreach (GameObject cat in catList) {
+			Destroy(cat.gameObject);
+		}
+		catList.Clear();
+		foreach (GameObject butterfly in butterflyList) {
+			Destroy(butterfly.gameObject);
+		}
+		butterflyList.Clear();
 	}
 
 	void Update() {
